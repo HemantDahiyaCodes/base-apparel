@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    "nav nav nav image image"
+    "modal-container modal-container modal-container image image";
+}
+
+nav {
+  grid-area: nav;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.modal-container {
+  height: 100%;
+  width: 100%;
+  grid-area: modal-container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-container {
+  height: 90%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.heading.one,
+.heading.two,
+.heading.three {
+  font-size: 4rem;
+  font-family: roboto;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.heading.one {
+  color: hsl(0, 36%, 70%);
+  font-weight: 400;
+}
+
+.text {
+  color: hsl(0, 93%, 68%);
+  font-family: roboto;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.email-input {
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#email {
+  width: 80%;
+  height: 100%;
+  border: none;
+  border-radius: 40px;
+  padding-left: 1rem;
+  font-family: roboto;
+  font-size: 16px;
+  outline: none;
+}
+
+button {
+  border: none;
+  background-color: hsl(0, 93%, 68%);
+  border-radius: 40px;
+}
+
+#container button {
+  width: 20%;
+}
+.image-container {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-image: url(hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 30% 60%;
+    grid-template-areas:
+      "nav"
+      "image"
+      "modal-container";
+  }
+
+  .image-container {
+    background-image: url(hero-mobile.jpg);
+  }
+
+  .heading.one,
+.heading.two,
+.heading.three {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+}
+}
