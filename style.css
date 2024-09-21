@@ -109,6 +109,11 @@ button {
   background-size: cover;
 }
 
+.verify {
+  font-size: 16px;
+  font-family: roboto;
+}
+
 @media (max-width: 1024px) {
   .grid-container {
     grid-template-columns: 100%;
